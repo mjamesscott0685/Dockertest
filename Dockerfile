@@ -6,7 +6,7 @@
 from alpine:latest
 
 arg DEBIAN_FRONTEND=noninteractive
-run apk update && apk install -y python3 curl
+run apk update && apk add python3 curl
 
 copy . /src
 workdir /src
