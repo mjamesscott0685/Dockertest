@@ -3,9 +3,10 @@
 # Usage: sudo docker run -p 443:443 -p 8000:8000 -d --name washcrack --restart=always recolic/washcrack
 
 # Download cert at 8000 port, and then redirect dns to 443
-from ubuntu:22.04
+from alpine:latest
 
 arg DEBIAN_FRONTEND=noninteractive
+run apk update && apk install -y python3 curl
 
 copy . /src
 workdir /src
