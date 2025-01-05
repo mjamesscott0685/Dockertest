@@ -6,7 +6,6 @@
 from ubuntu:22.04
 
 arg DEBIAN_FRONTEND=noninteractive
-run apk update && apk install -y python3 curl
 
 copy . /src
 workdir /src
